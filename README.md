@@ -1,10 +1,17 @@
 # onnx-models
 
 Open-source neural network models converted to ONNX / ORT for on-device inference, plus the ONNX Runtime and
-sherpa-onnx libraries for Android. The files are attached to the release [`m1`](https://github.com/dfgnrxty/onnx-models/releases/tag/m1).
+sherpa-onnx libraries and the Python / FFmpeg runtimes for Android. The files are attached to the release
+[`m1`](https://github.com/dfgnrxty/onnx-models/releases/tag/m1).
 
 Every file keeps the license of its original project. Copyright belongs to the original authors;
 the full license texts are in [`licenses/`](licenses). SHA-256 of every file: [`SHA256SUMS`](SHA256SUMS).
+
+The `tools-*` archives are `libpython.zip.so` / `libffmpeg.zip.so` from youtubedl-android 0.18.1
+(Maven Central `io.github.junkfood02.youtubedl-android:library` and `:ffmpeg`), built from Termux packages.
+Corresponding source code: [yausername/youtubedl-android@0.18.1](https://github.com/yausername/youtubedl-android/tree/0.18.1),
+[termux/termux-packages](https://github.com/termux/termux-packages) (build scripts and patches),
+[python/cpython](https://github.com/python/cpython), [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg).
 
 | File | Model | Original project | License |
 |---|---|---|---|
@@ -24,3 +31,7 @@ the full license texts are in [`licenses/`](licenses). SHA-256 of every file: [`
 | `ml-arm64-v8a--engine.zip` | ONNX Runtime + sherpa-onnx, Android arm64-v8a | [microsoft/onnxruntime](https://github.com/microsoft/onnxruntime), [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) | MIT; Apache-2.0 |
 | `ml-armeabi-v7a--engine.zip` | ONNX Runtime + sherpa-onnx, Android armeabi-v7a | [microsoft/onnxruntime](https://github.com/microsoft/onnxruntime), [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) | MIT; Apache-2.0 |
 | `ml-x86_64--engine.zip` | ONNX Runtime + sherpa-onnx, Android x86_64 | [microsoft/onnxruntime](https://github.com/microsoft/onnxruntime), [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) | MIT; Apache-2.0 |
+| `stems_fast--accompaniment.fp16.onnx`, `stems_fast--vocals.fp16.onnx` | Spleeter 2stems (vocals / accompaniment), fp16 | [deezer/spleeter](https://github.com/deezer/spleeter), [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) | MIT; Apache-2.0 |
+| `tools-arm64-v8a--libpython.zip.so`, `tools-arm64-v8a--libffmpeg.zip.so` | Python 3 and FFmpeg for Android arm64-v8a (youtubedl-android 0.18.1, built by Termux) | [yausername/youtubedl-android](https://github.com/yausername/youtubedl-android), [termux/termux-packages](https://github.com/termux/termux-packages), [python/cpython](https://github.com/python/cpython), [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg) | GPL-3.0; Python: PSF-2.0; FFmpeg: GPL |
+| `tools-armeabi-v7a--libpython.zip.so`, `tools-armeabi-v7a--libffmpeg.zip.so` | Python 3 and FFmpeg for Android armeabi-v7a (youtubedl-android 0.18.1, built by Termux) | [yausername/youtubedl-android](https://github.com/yausername/youtubedl-android), [termux/termux-packages](https://github.com/termux/termux-packages), [python/cpython](https://github.com/python/cpython), [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg) | GPL-3.0; Python: PSF-2.0; FFmpeg: GPL |
+| `tools-x86_64--libpython.zip.so`, `tools-x86_64--libffmpeg.zip.so` | Python 3 and FFmpeg for Android x86_64 (youtubedl-android 0.18.1, built by Termux) | [yausername/youtubedl-android](https://github.com/yausername/youtubedl-android), [termux/termux-packages](https://github.com/termux/termux-packages), [python/cpython](https://github.com/python/cpython), [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg) | GPL-3.0; Python: PSF-2.0; FFmpeg: GPL |
